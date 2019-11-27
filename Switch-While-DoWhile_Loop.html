@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Switch,While,Do While Loops</title>
+</head>
+
+<body>
+    <script>
+        // 1.  Write a switch statement with the following condition: If the variable age is greater than 18, output "Old enough", otherwise output "Too young".
+
+        var age = +prompt("Enter your age")
+        switch (true) {
+            case age > 18:
+                console.log("Old Enough");
+                break;
+            default:
+                console.log("Too Young");
+        }
+
+        // 2.  Write a program to check whether the given input number is divisible by 3 or not by using Switch Case statements. Show a message “Number is not divisible by 3” or “Number is divisible by 3”.
+
+        var number = +prompt("Enter a number to check whether it is divisible by 3 or not")
+
+        switch (number % 3) {
+            case 0:
+                console.log("The given number " + number + " is divisible by 3");
+                break
+            default:
+                console.log("The given number " + number + " is not divisible by 3");
+        }
+
+        // 3. Write a program to create a calculator for +, -, *, /, % using switch case statements.
+        //      (number1, number2 and operator will be input)
+
+        number1 = +prompt("Enter number1")
+        number2 = +prompt("Enter number2")
+        operator = prompt("Enter any operator (+,-,*,/)")
+
+        switch (operator) {
+            case "+":
+                console.log(number1 + " + " + number2 + " = " + (number1 + number2))
+                break
+            case "-":
+                console.log(number1 + " - " + number2 + " = " + (number1 - number2))
+                break
+            case "*":
+                console.log(number1 + " * " + number2 + " = " + (number1 * number2))
+                break
+            case "/":
+                console.log(number1 + " / " + number2 + " = " + (number1 / number2))
+                break
+            default:
+                console.log("Enter correct operator");
+        }
+
+        // 4. The getDay() method returns the weekday as a number between 0 and 6. (Sunday=0, Monday=1, Tuesday=2 …). Use the weekday number to calculate weekday name.
+
+        var date = new Date()
+        var day = date.getDay()
+        switch (day) {
+            case 0:
+                console.log("Today is Sunday");
+                break;
+            case 1:
+                console.log("Today is Monday");
+                break;
+            case 2:
+                console.log("Today is Tuesday");
+                break;
+            case 3:
+                console.log("Today is Wednesday");
+                break;
+            case 4:
+                console.log("Today is Thursday");
+                break;
+            case 5:
+                console.log("Today is Friday");
+                break;
+            case 6:
+                console.log("Today is Saturday");
+                break;
+        }
+
+        // 5. The getDay() method returns the weekday as a number between 0 and 6. (Sunday=0, Monday=1, Tuesday=2 ...). If today is neither Saturday (6) nor Sunday (0), write a default message: 
+
+        switch (new Date().getDay()) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                console.log("Today is a Working Day");
+                break
+            default:
+                console.log("Today is a Holiday");
+        }
+
+        //  6. Given the following script 
+        //     function checkCar() {     
+        //         var text;     
+        //         var favCar = prompt("What is your favorite car?");     
+        //         switch(favCar) {         
+        //             //Add code here     
+        //         }     
+        //         document.write( text); 
+        //     } 
+        //     checkCar(); 
+        //     Finish the switch statement. Add the following cases: BMW, Ford and Peugeot.  Set the value of the variable text to: "German car" for BMW. "American car" for Ford. "French car" for Peugeot.  Also add a default case where the text value is "Unknown car name". 
+
+        function checkCar() {
+            var text;
+            var favCar = prompt("What is your favourite car?")
+            switch (favCar) {
+                case "BMW":
+                    text = "Green Car";
+                    break;
+                case "Ford":
+                    text = "American Car";
+                    break;
+                case "Peugeot":
+                    text = "French car";
+                    break;
+                default:
+                    text = "Unknown Car name"
+            }
+            console.log(text);
+        }
+        checkCar()
+
+        // 7. Fix the following switch statement: 
+        //     function checkFruit() {     
+        //         var text;     
+        //         var fruits = prompt("Enter a fruit name");     
+        //         switch(fruits) {         
+        //             case "Banana"             
+        //             text = "Banana is good!";          
+        //             case "Orange"             
+        //             text = "I am not a fan of orange.";          
+        //             case "Apple"             
+        //             text = "How you like them apples?";  
+        //             default             
+        //             text = "I have never heard of that fruit.";     
+        //         }     
+        //         document.write( text); 
+        //     } 
+        //     checkFruit(); 
+
+        function checkFruit() {
+            var text;
+            var fruits = prompt("Enter a fruit name");
+            switch (fruits) {
+                case "Banana":
+                    text = "Banana is good!";
+                    break;
+                case "Orange":
+                    text = "I am not a fan of orange.";
+                    break;
+                case "Apple":
+                    text = "How you like them apples?";
+                    break;
+                default:
+                    text = "I have never heard of that fruit.";
+            }
+            console.log(text);
+        }
+        checkFruit();
+
+        // 8. Write a function that displays the marks range against a particular grade. For example, if grade is “B”, then print Marks [ >= 60 and <70 ]
+
+        var marks;
+        var grade = prompt("Enter your grade")
+        switch (grade) {
+            case "A-ONE":
+                marks = "Marks [>=80 and <=100]"
+                break
+            case "A":
+                marks = "Marks [>=70 and <80]"
+                break
+            case "B":
+                marks = "Marks [>=60 and <70]"
+                break
+            case "C":
+                marks = "Marks [>50 and <60]"
+                break
+            case "D":
+                marks = "Marks [>=40 and <50]"
+                break
+            case "E":
+                marks = "Marks [>=33 and <40]"
+                break
+            case "F":
+                marks = "Marks [>=0 and <33]"
+                break
+        }
+        console.log(marks);
+
+        // 9.  Use a conditional (ternary) operator for this exercise: If the variable age is a value below 18, the value of the variable voteable should be "Too young",  otherwise the value of voteable should be "Old enough".
+
+        var age = prompt("Enter your age")
+        var condition = age >= 18 ? "Old Enough" : "Too Young"
+        console.log(condition);
+
+
+        //              DO THE FOLLOWING EXERCISES USING WHILE & DO-­‐WHILE LOOPS
+
+        // 10. Write a program to display the message “Hello World” 5 times in your browser.
+
+        // While Loop
+        var msg = ""
+        var i = 0;
+        while (i < 5) {
+            msg += "While Loop Hello World " + (i + 1) + "\n"
+            i++
+        }
+        console.log(msg);
+
+        // Do While Loop
+        var msg = ""
+        var i = 0;
+        do {
+            msg += "Do While Loop Hello World " + (i + 1) + "\n"
+            i++
+        } while (i < 5)
+        console.log(msg);
+
+        // 11.  Write a program to print numeric counting from 1 to 10
+        var count = "Numerical Counting Using While Loop \n\n";
+        var i = 0;
+        while (i < 10) {
+            count += (i + 1) + "\n"
+            i++
+        }
+        console.log(count);
+
+        var count = "Numrical Counting Using Do-While loop \n\n"
+        var i = 0
+        do {
+            count += i + 1 + "\n"
+            i++
+        } while (i < 10)
+        console.log(count);
+
+        // 13. Write a program to print multiplication table of any number using. Table number & length should be taken as an input from user
+
+        var table_no = +prompt("Enter any number to print its multiplication table")
+        var table_length = +prompt("Enter length of Multiplication table")
+
+        var table = "Multipilication table of " + table_no + " Using While Loop \n"
+        table += "Length:" + table_length + "\n\n"
+        var i = 1;
+        while (i <= table_length) {
+            table += table_no + " X " + i + " = " + table_no * i + "\n"
+            i++
+        }
+        console.log(table);
+
+        var table = "Multipilication table of " + table_no + " Using Do While Loop \n"
+        table += "Length:" + table_length + "\n\n"
+        var i = 1;
+        do {
+            table += table_no + " X " + i + " = " + table_no * i + "\n"
+            i++
+        } while (i <= table_length)
+        console.log(table);
+
+        // 14. You have an array A = [“Nokia”, “Samsung”, “Apple”, “Sony”, “Huawei”] Write each element on new line. 
+
+        var A = ["Nokia", "Samsung", "Apple", "Sony", "Huawei"]
+        var arr = "Using While Loop \n\n"
+        var i = 0;
+        while (i < A.length) {
+            arr += A[i] + "\n"
+            i++
+        }
+        console.log(arr);
+
+
+        var A = ["Nokia", "Samsung", "Apple", "Sony", "Huawei"]
+        var arr = "Using Do While loop \n\n"
+        var i = 0;
+        do {
+            arr += A[i] + "\n"
+            i++
+        } while (i < A.length)
+
+        console.log(arr);
+
+        // 15. Write a program to print items of the following array: fruits = [“apple”, “banana”, “mango”, “orange”, “strawberry”] 
+
+        var fruits = ["Apple", "Banana", "Mango", "Orange", "Strawberry"]
+        var fruit = "Using While Loop \n\n"
+        var i = 0;
+        while (i < fruits.length) {
+            fruit += fruits[i] + "\n"
+            i++
+        }
+        console.log(fruit);
+
+        var fruits = ["Apple", "Banana", "Mango", "Orange", "Strawberry"]
+        var fruit = "Using While Loop \n\n"
+        var i = 0;
+        while (i < fruits.length) {
+            fruit += "Element at Index " + i + " is " + fruits[i] + "\n"
+            i++
+        }
+        console.log(fruit);
+
+        // 16. Write a program to initialize an array of N items by using prompt. Where N is number of items as entered by the user.
+
+        var n_items = +prompt("Enter no of items")
+        var items = "Number of items: " + n_items + "\n"
+        items += "Items: \n\n"
+        var i = 0;
+        while (i < n_items) {
+            var value = prompt("Enter value for index " + i)
+            items += value + "\n"
+            i++
+        }
+        console.log(items);
+
+        // 17. Generate the following series in your browser. See example output. 
+        // a. Counting: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 
+        // b. Reverse counting: 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 
+        // c. Even: 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 
+        // d. Odd: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 
+        // e. Series: 2k, 4k, 6k, 8k, 10k, 12k, 14k, 16k, 18k, 20k 
+
+        var counting = "Counting: \n"
+        var i = 1
+        while (i <= 15) {
+            counting += i + ", "
+            i++
+        }
+        counting += "\n\nReverse Counting: \n"
+        var i = 10
+        while (i >= 1) {
+            counting += i + ", "
+            i--
+        }
+        counting += "\n\nEven: \n"
+        var i = 0
+        while (i <= 20) {
+            counting += i + ", "
+            i += 2
+        }
+        counting += "\n\nOdd: \n"
+        var i = 1
+        while (i <= 20) {
+            counting += i + ", "
+            i += 2
+        }
+        counting += "\n\nSeries: \n"
+        var i = 2
+        while (i <= 20) {
+            counting += i + "k, "
+            i += 2
+        }
+        console.log(counting);
+
+        // 18. You have an array A = [“cake”, “apple pie”, “cookie”, “chips”, “patties”] Write a program to enable “search by user input” in an array. After searching, prompt the user whether the given item is found in the list or not.
+
+        var bakery_items = ["cake", "apple pie", "cookie", "chips", "patties"]
+        var item_check = prompt("Welcome to ABC Bakery.What do you want to order sir/ma'am?")
+        var matchFound = "No"
+        var i = 0
+        while (i < bakery_items.length) {
+            if (item_check.toLowerCase() === bakery_items[i]) {
+                matchFound = "Yes"
+                console.log(bakery_items[i] + " is available at index " + bakery_items.indexOf(bakery_items[i]));
+                break
+            }
+            i++
+        }
+        if (matchFound === "No") {
+            console.log("We are sorry " + item_check + " is not available in our bakery.");
+        }
+
+        // 19. Write a program that prints number from start of the array to desired stop value. 
+        //      Given array: var scores  = [12, 45, 3, 22, 34, 50]; 
+        //      (Hint: take stop value from user) 
+        //      E.g. if user gives 3 as input value print 12, 45, 3 
+        //      if user gives 34 as input value print 12, 45, 3, 22, 34
+
+        var scores = [12, 45, 3, 22, 34, 50]
+        var stop = +prompt("Enter the desired stop value")
+
+        var score = "Initial Array: " + scores + "\n"
+        score += "User given stop value: " + stop + "\n"
+        var matchFound = "No"
+        var i = 0;
+        while (i < scores.length) {
+            if (scores[i] === stop) {
+                matchFound = "Yes"
+                score += "Required array to the given stop value " + stop + " is : "
+                var j = 0
+                while (j <= i) {
+                    score += scores[j] + ", "
+                    j++
+                }
+                break
+            }
+            i++
+        }
+        if (matchFound === "No") {
+            score += "Sorry given stop value " + stop + " is not in the list"
+        }
+        console.log(score)
+
+        // 20. You have an array 
+        //     A = [ [1,2,3] , [4,5,6] , [7,8,9] ] 
+        //     Write each element on new line with the help of nested loops.
+
+        var a = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        var nested = ""
+        var i = 0
+        while (i < a.length) {
+            nested += a[i] + "\n"
+            i++
+        }
+        nested += "\n"
+        var i = 0
+        while (i < a.length) {
+            var j = 0
+            while (j < a.length) {
+                nested += a[i][j] + "\n"
+                j++
+            }
+            i++
+        }
+        console.log(nested);
+
+        // 21. Write a program to repeatedly print the value of the variable num which is input by user. Value should be decreasing by 0.5 each time, as long as x Value remains positive.
+
+        var number = +prompt("Enter a number")
+        var num = ""
+        while (number >= 0) {
+            num += number + ", "
+            number -= 0.5
+        }
+        console.log(num);
+
+        // 22. The even/odd reporter Write a loop that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd, and report that to the screen (e.g. "2 is even").
+
+        var reporter = ""
+        var i = 0
+        while (i <= 20) {
+            if (i % 2 === 0) {
+                reporter += i + " is even\n"
+            }
+            else {
+                reporter += i + " is odd\n"
+            }
+            i++
+        }
+        console.log(reporter);
+
+        // 23. Write a program to calculate the product of the odd integers from 1 to 7.
+
+        var cal_product = "Sum of the product is"
+        var product = 1;
+        var i = 1
+        while (i <= 7) {
+            if (i % 2 !== 0) {
+                product *= i
+            }
+            i++
+        }
+        console.log("Product of the odd integers from 1 to 7 is: " + product);
+
+        // 24. Write a program that will write out a wedge of stars. The user will enter the initial number of stars, and the program will write out lines of stars where each line has one few star than the previous line. Initial number of stars: 7 
+        //      ******* 
+        //      ****** 
+        //      ***** 
+        //      **** 
+        //      *** 
+        //      ** 
+        //      * 
+
+        var stars = "*"
+        for (i = 7; i >= 1; i--) {
+            for (j = i; j >= 1; j--) {
+                document.write(stars);
+            }
+            document.write("<br>");
+        }
+        document.write("<br>")
+
+        // 25. Write a program to create the following patterns in your browser. Take number of lines as an input. 
+
+        //     a.  ***** 
+        //         ***** 
+        //         ***** 
+        //         ***** 
+
+        //     b.  * 
+        //         ** 
+        //         *** 
+        //         **** 
+        //         ***** 
+
+        //     c.  ***** 
+        //         **** 
+        //         *** 
+        //         ** 
+        //         * 
+
+        // a.
+        var stars = "*"
+        for (i = 5; i >= 1; i--) {
+            for (j = 7; j >= 1; j--) {
+                document.write(stars);
+            }
+            document.write("<br>");
+        }
+        document.write("<br>")
+
+        // b.
+        var stars = "*"
+        for (i = 1; i <= 5; i++) {
+            for (j = i; j >= 1; j--) {
+                document.write(stars);
+            }
+            document.write("<br>");
+        }
+        document.write("<br>")
+
+        // c.
+        var stars = "*"
+        for (i = 5; i >= 1; i--) {
+            for (j = i; j >= 1; j--) {
+                document.write(stars);
+            }
+            document.write("<br>");
+        }
+        document.write("<br>")
+
+        // d.
+        var n = prompt("Please enter number of rows");
+        n=eval(n);
+        var s = n - 1;
+        for (var i = 1; i <= n; i++) {
+            for (var c = 1; c <= s; c++)
+                document.write(" ");
+
+            s--;
+
+            for (c = 1; c <= i; c++)
+                document.write("*");
+
+            document.write("<br>");
+        }
+        s = 1;
+
+        for (i = 1; i <= n - 1; i++) {
+            for (c = 1; c <= s; c++)
+                document.write(" ");
+
+            s++;
+
+            for (c = 1; c < (n - i) + 1; c++)
+                document.write("*");
+
+            document.write("<br>");
+        }
+
+
+    </script>
+</body>
+
+</html>
