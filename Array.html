@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        // 1.  Declare and Initialize an array and store available education qualifications in Pakistan (e.g. SSC, HSC, BCS, BS, BCOM, MS, M. Phil., PhD). Show the listed qualifications in your browser.
+
+        var qualifications = ["SSC","BCS","BS","BCOM","MS","M.PHIL","PhD"]
+        
+        degree="Qualifications\n\n"
+        for (var i=0;i<=qualifications.length-1;i++){
+            degree += i+1 + ". " + qualifications[i] + "\n" 
+        } 
+        console.log(degree);
+
+        // 2. Declare and initialize an empty array to store top movies of 2015.  Add movies one by one in an array. Display the elements & length of array in your browser. (Use array’s length method)
+
+        var movie = []
+        movie[0] = "Avengers: Age of Ultron"
+        movie[1] = "Spectre"
+        movie[2] = "Jurassic World"
+        movie[3] = "Inside Out"  
+
+        var top_Movies = "Top Movies of 2015\n\n"
+        for (var i=0;i<=movie.length-1;i++){
+            top_Movies += i+1 + ". " + movie[i] + "\n"
+        }
+
+        console.log(top_Movies + "\nLength of the array: " + movie.length);
+
+        // 3. Declare and Initialize an array with your favorite cars. Show  
+        //     a. First index of the array 
+        //     b. Car at first index of the array
+        //     c. Last index of the array 
+        //     d. Car at last index of the array 
+
+        var cars = ["Audi","Volvo","Ford","Lamborghini"]
+        var index = "Favourite Cars \n\n" 
+        index += "First index of array: " + cars.indexOf("Audi") + "\n"
+        index+= "Car at first index of the array: " + cars[0] + "\n"
+        index += "Last index of array: " + cars.indexOf("Lamborghini") + "\n"
+        index+= "Car at last index of the array: " + cars[cars.length-1] + "\n"
+        console.log(index)
+
+        // 3.  Write a program to store 3 student names in an array. Take another array to store score of these three students. Assume that total marks are 500 for each student, display the scores & percentages of students
+        
+        var students = ["Michael", "John", "Tony"]
+        var scores = [320, 230, 480]
+        var total_Marks = 500
+        var student1Percentage = (scores[0]/total_Marks)*100
+        var student2Percentage = (scores[1]/total_Marks)*100
+        var student3Percentage = (scores[2]/total_Marks)*100
+        var record = ""
+        record += "Score of " + students[0] + " is " + scores[0] + ". Percentage: " + student1Percentage + "%\n"
+        record += "Score of " + students[1] + " is " + scores[1] + ". Percentage: " + student2Percentage + "%\n"
+        record += "Score of " + students[2] + " is " + scores[2] + ". Percentage: " + student3Percentage + "%"
+        console.log(record);
+
+        // 4. Initialize an array with color names. Display the array elements in your browser. 
+        //     a. Ask the user what color he/she wants to add to the beginning & add that color to the beginning of the array. Display the updated array in your browser. 
+        //     b. Ask the user what color he/she wants to add to the end & add that color to the end of the array. Display the updated array in your browser. 
+        //     c. Add two more color to the beginning of the array. Display the updated array in your browser. 
+        //     d. Delete the first color in the array. Display the updated array in your browser. 
+        //     e. Delete the last color in the array. Display the updated array in your browser. 
+        //     f. Ask the user at which index he/she wants to add a color & color name. Then add the color to desired position/index. . Display the updated array in your browser. 
+        //     g. Ask the user at which index he/she wants to delete color(s) & how many colors he/she wants to delete. Then remove the same number of color(s) from user-defined position/index. . Display the updated array in your browser. 
+ 
+        var colors = ["black","white","red"]
+
+        var color = "Initial array of colors: " + colors + "\n"
+        // a.
+        var color_beginning = prompt("Enter a color you want to add in the beginning")
+        colors.unshift(color_beginning)
+        color += "A color added to the beginning of an array: " + colors + "\n"
+        // b.
+        var color_end = prompt("Enter a color you want to add in the end")
+        colors.push(color_end)
+        color += "A color added to the end of an array: " + colors + "\n"
+        // c.
+        var colors_beginning_1 = prompt("Enter 1st color you want to add in the beginning")
+        var colors_beginning_2 = prompt("Enter 2nd color you want to add in the beginning")
+        colors.unshift(colors_beginning_1,colors_beginning_2)
+        color += "Two colors added to the beginning of an array: " + colors + "\n"
+        // d.
+        colors.shift()
+        color += "A color deleted from the beginning of an array: " + colors + "\n"
+        // e.
+        colors.pop()
+        color += "A color deleted from the end of an array: " + colors + "\n"
+        // f.
+        var color_mid_index = +prompt("Enter an index number at which you want to add a color")
+        var color_mid = prompt("Enter a color you want to add at the specific user privided location")
+        colors.splice(color_mid_index,0,color_mid) 
+        color += "A color has been added to the index " + color_mid_index + " of an array: " + colors + "\n"
+        // e.
+        var color_del_index = +prompt("Enter an index number from which you want to delete elements of an array")
+        var color_del = +prompt("Enter number of elements you want to delete")
+        colors.splice(color_del_index,color_del)
+        color += color_del + " Color elements have been deleted from index " + color_del_index + " : " + colors
+
+        console.log(color);
+
+        // 5. Write a program to store student scores in an array & sort the array in ascending order using Array’s sort method. 
+         
+        var students_Score = [320,230,480,120]
+
+        students_score = "Score of Students : " + students_Score + "\n"
+        students_score += "Ordered Scores of Students : " + students_Score.sort()
+        
+        console.log(students_score);
+
+        // 6. Write a program to sort the below mentioned array: var fruits = [“strawberry”, “apple”, “orange”, “banana”]; 
+        var fruits = ["strawberry","apple","orange","banana"]
+        var fruits_list = "Fruits list:\n" + fruits + "\n\n"   
+        fruits_list += "Fruit Ordered List \n" + fruits.sort()
+        console.log(fruits_list);
+
+        // 7. Write a program to initialize an array with city names. Copy 3 array elements from cities array to selectedCities array.
+        
+        var Cities = ["Karachi","Lahore","Islamabad","Quetta","Peshawar"]
+        var  selectedCities = Cities.slice(2,4)
+        var cities = "Cities List: \n" + Cities + "\n\n"
+        cities += "Selected Cities List: \n" + selectedCities
+        console.log(cities);
+
+        // 8. Write a program to create a single string from the below mentioned array: 
+        //      var arr = [“This ”, “ is ”, “ my ”, “ cat”]; (Use array’s join method) 
+        
+        var arr = ["This "," is "," my "," cat."]
+        var array = "Array: \n" + arr + "\n\n"
+        array += "String: \n" + arr.join("") 
+        console.log(array);
+
+        // 9.  Create a new array. Store values one by one in such a way that you can access the values in the order in which they were stored. (FIFO-First In First Out)
+
+        var fi = []
+        fi.push("Keyboard")
+        fi.push("mouse")
+        fi.push("printer")
+        fi.push("moniter")
+
+        var fifo = "Devices: \n" + fi + "\n\n"
+        var fo = "" 
+        for(var i=0;i=fi.length;i++){
+            fo += fi.shift() + "\n"
+        }
+        fifo += "Out: \n" + fo
+
+        console.log(fifo);
+
+        // 10. Create a new array. Store values one by one in such a way that you can access the values in reverse order. (Last In-First Out
+
+        var li = []
+        li.push("Keyboard")
+        li.push("mouse")
+        li.push("printer")
+        li.push("moniter")
+
+        var lifo = "Devices: \n" + li + "\n\n"
+        var fo = "" 
+        for(var i=0;i=li.length;i++){
+            fo += li.pop() + "\n"
+        }
+        lifo += "Out: \n" + fo
+
+        console.log(lifo);
+
+        // 11. Write a program to store phone manufacturers (Apple, Samsung, Motorola, Nokia, Sony & Haier) in an array. Display the following dropdown/select menu in your browser using document.write() method:
+
+        var phone = ["Apple","Samsung","Motorola","Nokia","Sony","Haier"]
+        document.write("<select>")
+        for(var i=0;i<phone.length;i++){
+            document.write("<option>" + phone[i] + "</option>" )
+        }
+        document.write("</select>")
+
+        // 12. Declare and initialize a multidimensional array representing the following matrix:  
+        
+        var matrix = [[0,1,2,3],[1,0,1,2],[2,1,0,1]]
+        var multi_matrix = "Multidimensional Matrix: \n\n" 
+        for(var i=0;i<matrix.length;i++){
+            multi_matrix += matrix[i] + "\n"
+        }
+        console.log(multi_matrix);
+        
+    </script>
+</body>
+</html>
