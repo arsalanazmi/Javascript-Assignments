@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Math Expression</title>
+</head>
+<body>
+    <script>
+        // 1. Write a program that take two numbers & add them in a new variable. Show the result in your browser. 
+        
+        var number1 = +prompt("Enter Number1")
+        var number2 = +prompt("Enter Number2")
+        var sum = number1 + number2
+        console.log("Sum of " + number1 + " and " + number2 + " is " + sum);
+
+        // 2. Do the following using JS Mathematic Expressions 
+        //     a. Declare a variable.
+        //     b. Show the value of variable in your browser like “Value after variable declaration is: ??”.
+        //     c. Initialize the variable with some number.
+        //     d. Show the value of variable in your browser like “Initial value: 3”.
+        //     e. Increment the variable.
+        //     f. Show the value of variable in your browser like “Value after increment is: 4”.
+        //     g. Add 7 to the variable.
+        //     h. Show the value of variable in your browser like “Value after addition is: 11”.
+        //     i. Decrement the variable.
+        //     j. Show the value of variable in your browser like “Value after decrement is: 10”.
+        //     k. Show the remainder after dividing the variable’s value by 3. Output : “The remainder is : 1”
+
+        var output = ""
+        // a.
+        var num;
+        // b.
+        output +="Value after variable declaration is " + num + "\n" 
+        // c.
+        num = 3
+        // d.
+        output += "Initial value: " + num + "\n"
+        // e.
+        num++
+        // f.
+        output += "Value after increment is: " + num + "\n" 
+        // g.
+        num+=7
+        // h.
+        output += "Value after addition is: " + num + "\n"
+        // i.
+        num--
+        // j.
+        output += "Value after decrement is: " + num + "\n"
+        // k.
+        output += "The remainder is: " + num%3
+        console.log(output);
+        
+
+        // 3. Cost of one movie ticket is 600 PKR. Write a script to store ticket price in a variable & calculate the cost of buying 5 tickets to a movie.
+
+        var ticket_price = 600
+        console.log("One Movie Ticket : " + ticket_price + " PKR\n" + "Total cost to buy 5 tickets to a movie is " + (ticket_price*5) + " PKR")
+
+        // 4. Write a script to display multiplication table of any number in your browser.
+
+        var table_no = +prompt("Enter a number whose table to be generated")
+
+        table = ""
+        for (var i=1;i<=10;i++){
+            table += table_no + " x " + i + " = " + (table_no*i) + "\n"
+        }
+        console.log("Multiplication Table of " + table_no + "\n\n" + table)
+
+        // 5. The Temperature Converter: It’s hot out! Let’s make a converter based on the steps here. 
+        //     a. Store a Celsius temperature into a variable.
+        //     b. Convert it to Fahrenheit & output “NNoC is NNoF”. 
+        //     c. Now store a Fahrenheit temperature into a variable. d. Convert it to Celsius & output “NNoF is NNoC”. 
+ 
+           var celsius = +prompt("Enter Temperature in Celsius")
+           var farenheit = +prompt("Enter Temperature in Farenheit")
+
+           var Farenheit = ( celsius * (9/5) ) + 32
+           var Celsius = (farenheit - 32) * (5/9)
+           
+           var temperature_Conversion = "TEMPERATURE CONVERTION\n\n"
+           temperature_Conversion += celsius + "°C is " + Farenheit.toFixed(1) + "°F\n"
+           temperature_Conversion += farenheit + "°F " + Celsius.toFixed(1) + "°C"
+           console.log(temperature_Conversion);
+
+        // 6. Write a program to implement checkout process of a shopping cart system for an e-commerce website. Store the following in variables 
+        //     a. Price of item 1
+        //     b. Price of item2
+        //     c. Ordered quantity of item 1
+        //     d. Ordered Quantity of item 2
+        //     e. Shipping charges 
+
+        var item1_Price = 560
+        var item2_Price = 200
+        var item1_quantity = 2
+        var item2_quantity = 5
+        var shipping_Cost = 150
+
+        var totalCost = (item1_Price * item1_quantity) + (item2_Price * item2_quantity) + shipping_Cost
+        
+        Price = "Shopping Cart\n\n" + "Item 1 Price: " + item1_Price + " PKR\n" + "Item 1 Quantity: " + item1_quantity + "\nItem 2 Price: " + item2_Price + " PKR\n" + "Item 2 Quantity: " + item2_quantity + "\nShipping Cost" + shipping_Cost
+        
+        console.log(Price + "\n\nTotal cost of your order is " + totalCost + " PKR")
+
+        // 7. Write a script to take total marks & marks obtained by a student. Compute the percentage & show the result in your browser. 
+
+        English = +prompt("Enter Marks of English out of 100");
+        Maths = +prompt("Enter Marks of Maths out of 100");
+        Physics = +prompt("Enter Marks of Physics out of 100");
+        Computer = +prompt("Enter Marks of Computer out of 100");
+        Chemistry = +prompt("Enter Marks of Chemistry out of 100");
+
+        Total_Marks = 500;
+        Obtained_Marks = English + Maths + Physics + Computer + Chemistry;
+        Percentage = (Obtained_Marks / Total_Marks) * 100;
+
+        record = "MARK SHEET \n\n"
+        record += "English = " + English + "\nMaths = " + Maths + "\nPhysics = " + Physics + "\nComputer = " + Computer + "\nChemistry = " + Chemistry + "\n\nTotal Marks = " + Total_Marks + "\nObtained Marks = " + Obtained_Marks + "\nPercentage = " + Percentage.toFixed(2) + "%\n"
+
+        if (Percentage >= 80 && Percentage <= 100) {
+            record += "Grade : A-ONE \nRemarks : Excellent"
+            console.log(record);
+        }
+        else if (Percentage >= 70 && Percentage <= 79) {
+            record += "Grade : A \nRemarks : Good"
+            console.log(record);
+        }
+        else if (Percentage >= 60 && Percentage <= 69) {
+            record += "Grade : B \nRemarks : Average"
+            console.log(record);
+        }
+        else if (Percentage >= 50 && Percentage <= 59) {
+            record += "Grade : C \nRemarks : Below Average"
+            console.log(record);
+        }
+        else {
+            record += "Grade : Fail !\nRemarks : Repeat class"
+            console.log(record);
+        }
+
+        // 8. Assume we have 10 US dollars & 25 Saudi Riyals. Write a script to convert the total currency to Pakistani Rupees. Perform all calculations in a single expression. (Exchange rates :  1 US Dollar  = 104 Pakistani Rupee  and  1 Saudi Riyal = 28 Pakistani Rupee)
+
+        var total_currency = (10 * 104) + (25 * 28)
+        console.log("Total Currency in PKR : " + total_currency);
+
+        // 9. Write a program to initialize a variable with some number and do arithmetic in following sequence:
+        //     a. Add 5
+        //     b. Multiply by 10
+        //     c. Divide the result by 2
+        //     Perform all calculations in a single expression.
+
+        var number = 2
+        console.log("Number : " + number + "\nAdd 5 : " + (number += 5) + "\nMultiply by 10 : " + (number *= 10) + "\nDivide the resultant by 2 : " + (number /= 2) );
+
+        // 10. The Age Calculator: Forgot how old someone is? Calculate it!
+        //     a. Store the current year in a variable.
+        //     b. Store their birth year in a variable.
+        //     c. Calculate their 2 possible ages based on the stored values. Output them to the screen like so: “They are either NN or NN years old”.
+
+        var currentdate = new Date()
+        var current_Year = currentdate.getFullYear()
+        var birth_Year = 1992
+        age = "Age Calculator\n\n"
+        age += "Current Year : " + current_Year + "\nBirth Year : " + birth_Year + "\n\n"
+        
+        age += "They are either " + ((current_Year-birth_Year)-1) + " or " + (current_Year-birth_Year)  + " years old."
+        console.log(age);
+        
+        // 11. The Geometrizer: Calculate properties of a circle.
+        //     a. Store a radius into a variable.
+        //     b. Calculate the circumference based on the radius, and output “The circumference is NN”.
+        //     (Hint : Circumference of a circle = 2 π r ,   π = 3.142)
+        //     Calculate the area based on the radius, and output “The area is NN”. (Hint : Area of a circle = π r2,  π = 3.142) 
+
+        var radius = 12
+        var Circumference = 2*Math.PI*radius
+        var area = Math.PI*Math.pow(radius,2)
+        var output = "The Geometrizer\n\nRadius of Circle : " + radius + "\nThe Circumference of circle is : " + Circumference.toFixed(2) + "\nThe area of circle is : " + area.toFixed(2) 
+        console.log(output);
+        
+    </script>
+</body>
+</html>
