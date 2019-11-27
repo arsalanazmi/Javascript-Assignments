@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>If Else & Switcha</title>
+</head>
+
+<body>
+    <script>
+        // 1. Write a program to check whether the given input number is divisible by 3 or else show a message “Number is not divisible by 3”. 
+
+        var number = +prompt("Enter a number")
+
+        if ((number % 3) == 0) {
+            console.log("Given number '" + number + "' is divisible by 3")
+        }
+        else {
+            console.log("Given number '" + number + "' is not divisible by 3")
+        }
+
+        // 2. Write a program that checks whether the given input is an even number or an odd number. 
+
+        if ((number % 2) == 0) {
+            console.log("Given number '" + number + "' is an even number")
+        }
+        else {
+            console.log("Given number '" + number + "' is an odd number")
+        }
+
+        // 3. Write an if/else statement with the following condition: If the variable age is greater than 18, output "Old enough", otherwise output "Too young".
+
+        var age = +prompt("Enter your age")
+
+        if (age > 18) {
+            console.log("Old Enough")
+        }
+        else {
+            console.log("Too Young")
+        }
+
+        // 4. Write a program that prompts the user for their name, and then displays a special greeting to that person if their name is the same as yours. If the name entered by the user is anything other than your name, your code should not produce any output
+
+        var myName = "Arsalan Raza Azmi"
+        var userName = prompt("Enter a user name")
+
+        if (userName === myName) {
+            console.log("Hi " + userName)
+        }
+
+        // 5. Write a program to check whether the given input number is divisible by 3 or not by using Switch Case statements. Show a message “Number is not divisible by 3” or “Number is divisible by 3”.
+
+        switch (number % 3) {
+            case 0:
+                console.log("Given number '" + number + "' is divisible by 3")
+                break;
+            default:
+                console.log("Given number '" + number + "' is not divisible by 3")
+        }
+
+        // 6. Write a program that takes a character(number or string) in a variable & checks whether the given input is a number, uppercase letter or lower case letter. (Hint: ASCII codes:- A=65, Z=90, a=97, z=122)
+
+        var char = prompt("Enter any Character")
+
+        if (char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90) {
+            console.log("The given Character '" + char + "' is an Upper Case Letter")
+        }
+        else if ((char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122)) {
+            console.log("The given Character '" + char + "' is a Lower Case Letter")
+        }
+        else if ((char.charCodeAt(0) >= 48 && char.charCodeAt(0) <= 57)) {
+            console.log("The given Character '" + char + "' is a Number")
+        }
+        else {
+            console.log("The given Character '" + char + "' is a Special Character")
+        }
+
+        // 7. Write a program to create a calculator for +, -, *, /, % using switch case statements. (number1, number2 and operator will be input)
+
+        var number1 = +prompt("Enter Number1")
+        var number2 = +prompt("Enter Number2")
+        var operator = prompt("Enter any operator")
+
+        switch (operator) {
+            case "+":
+                var add = number1 + number2
+                console.log(number1 + " + " + number2 + " = " + add)
+                break
+            case "-":
+                var sub = number1 - number2
+                console.log(number1 + " - " + number2 + " = " + sub)
+                break
+            case "*":
+                var mul = number1 * number2
+                console.log(number1 + " * " + number2 + " = " + mul)
+                break
+            case "/":
+                var div = number1 / number2
+                console.log(number1 + " / " + number2 + " = " + div.toFixed(2))
+                break
+        }
+
+        // 8. Write a program that takes time as input from user in 24 hours clock format like: 1900 = 7pm. Implement the following case using if, else & else if statements
+
+        var time = +prompt("Enter any time in 24 hours clock format like: 1900 = 7pm")
+
+        if (time >= 0000 && time < 1200) {
+            console.log("Good Morning")
+        }
+        else if (time >= 1200 && time < 1700) {
+            console.log("Good Afternoon")
+        }
+        else if (time >= 1700 && time < 2100) {
+            console.log("Good Evening")
+        }
+        else if (time >= 2100 && time <= 2359) {
+            console.log("Good Night")
+        }
+        else {
+            console.log("Enter Correct Time in 24 Hours Clock Format")
+        }
+
+        // 9. Write a program that takes a calendar year in YYYY format in a variable. Check & notify the user whether it is a leap year or not.
+
+        var year = +prompt("Enter a calender year in YYYY format")
+
+        if (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0)) {
+            console.log("The mentioned year '" + year + "' is a leap year")
+        }
+        else {
+            console.log("The mentioned year '" + year + "' is not a leap year")
+        }
+
+        // 10. Write a program that
+        //     a. Store correct password in a JS variable.
+        //     b. Asks user to enter his/her password
+        //     c. Validate the two passwords:
+        //         i. Check if user has entered password. If not, then give message “ Please enter your password” 
+        //         ii. Check if both passwords are same. If they are same, show message “Correct! The password you entered matches the original password”. Show “Incorrect password” otherwise.
+
+        var myPassword = "arsalan123"
+        var userPassword = prompt("Enter your password")
+
+        if (userPassword.length === 0) {
+            alert("Please Enter Your Password !")
+        }
+        else if (myPassword === userPassword) {
+            console.log("Correct !")
+        }
+        else {
+            console.log("Incorrect Password !")
+        }
+
+        // 11. Write a JavaScript program that accept two integers and display the larger. Also show if the two integers are equal.
+
+        var integer1 = +prompt("Enter integer1")
+        var integer2 = +prompt("Enter integer2")
+
+        if (integer1 > integer2) {
+            console.log("Integer1 '" + integer1 + "' is larger than integer2 '" + integer2 + "'")
+        }
+        else if (integer2 > integer1) {
+            console.log("Integer2 '" + integer2 + "' is larger than integer1 '" + integer1 + "'")
+        }
+        else if (integer1 === integer2) {
+            console.log("Both integers integer1 '" + integer1 + "' & integer2 '" + integer2 + "' are equal")
+        }
+
+        // 12. Write a program that takes input a number from user & state whether the number is positive, negative or zero.
+
+        var number = +prompt("Enter a number to check whther it is negative, positive or zero")
+
+        if (number < 0) {
+            console.log("Given number '" + number + "' is Negative")
+        }
+        else if (number === 0) {
+            console.log("Given number '" + number + "' is Zero")
+        }
+        else if (number > 0) {
+            console.log("Given number '" + number + "' is Positive")
+        }
+
+        // 13. Ask the user what the current hour is. If the hour is between 6 and 9 a.m., tell the user, "Breakfast is served." If the hour is between 11 a.m. and 1 p.m., tell the user, "Time for lunch." If the hour is between 5 and 8 p.m., tell the user, "It's dinner time." For any other hours, tell the user, "Sorry, you'll have to wait, or go get a snack." (Hint: Store the hour in 24 hours clock format i.e. 14 for 2pm , 15 for 3pm)
+
+        var currentHour = prompt("Enter current hour in 24 hours clock format to check the status of food")
+
+        if (currentHour >= 6 && currentHour <= 9) {
+            console.log("Breakfast is served")
+        }
+        else if (currentHour >= 11 && currentHour <= 13) {
+            console.log("Time for lunch")
+        }
+        else if (currentHour >= 17 && currentHour <= 20) {
+            console.log("It's dinner time")
+        }
+        else {
+            console.log("Sorry, you'll have to wait, or go get a snack.")
+        }
+
+        // 14. Write a program that stores value in a variable & tell whether the type of that variable is a "number", "string", "boolean" or “undefined”
+
+        var value1 = "abc"
+        var value2 = 123
+        var value3 = true
+
+        var type = "Type of variable\n\n" + "Value 1: " + value1 + "\nValue 2: " + value2 + "\nValue 3: " + value3 + "\n\n"
+        type += "Value1 " + value1 + " is " + typeof (value1) + "\n"
+        type += "Value2 " + value2 + " is " + typeof (value2) + "\n"
+        type += "Value3 " + value3 + " is " + typeof (value3)
+
+        console.log(type);
+
+        // 15. Write a program that takes a character (i.e. string of length 1) and returns true if it is a vowel, false otherwise.
+
+        var string = prompt("Enter a string to check whether its first character is a vowel or not")
+
+        if ((string.charAt(0) === "a") || (string.charAt(0) === "e") || (string.charAt(0) === "i") || (string.charAt(0) === "o")
+            || (string.charAt(0) === "u") || (string.charAt(0) === "A") || (string.charAt(0) === "E") || (string.charAt(0) === "I") ||
+            (string.charAt(0) === "O") || (string.charAt(0) === "U")) {
+            console.log("The first character of string '" + string + "' is a vowel: True")
+        }
+        else {
+            console.log("The first character of string '" + string + "' is a vowel: False")
+        }
+
+        // 16. Choose the correct comparison operator to display "true", when: 10 is NOT equal to 8.
+
+        console.log("10 is NOT equal to 8 : " + (10 != 8))
+
+        // 17. Use a conditional (ternary) operator for this exercise: If the variable age is a value below 18, the value of the variable voteable should be "Too young", otherwise the value of voteable should be "Old enough".
+
+        var age = +prompt("Enter your age to check whether you are Young or Old")
+        condition = (age < 18) ? "Too Young" : "Old Enough"
+        console.log(condition)
+
+    </script>
+</body>
+
+</html>
