@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Write a function that displays current date & time in your browser.
+        function currentDate() {
+            var date = new Date()
+            console.log("Current Date & Time: " + date);
+        }
+        currentDate()
+
+        // 2. Write a function that takes first & last name and then it greets the user using his full name.
+
+        function name(f_name, l_name) {
+            var date = new Date()
+            var hours = date.getHours()
+            if (hours >= 0 && hours < 12) {
+                console.log("Good Morning " + f_name + " " + l_name);
+            }
+            else if (hours >= 12 && hours < 17) {
+                console.log("Good Afternoon " + f_name + " " + l_name);
+            }
+            else if (hours >= 17 && hours < 19) {
+                console.log("Good Evening " + f_name + " " + l_name);
+            }
+            else if (hours >= 19 && hours < 24) {
+                console.log("Good Night " + f_name + " " + l_name);
+            }
+        }
+        var first_Name = prompt("Enter Your First Name:")
+        var last_Name = prompt("Enter Your Last Name:")
+        name(first_Name, last_Name)
+
+        // 3. Write a function that adds two numbers (input by user) and returns the sum of two numbers
+
+        function add(num1, num2) {
+            number = num1 + num2
+            return number
+        }
+        var number1 = +prompt("Enter number 1")
+        var number2 = +prompt("Enter number 2")
+
+        var addition = add(number1, number2)
+        console.log(number1 + " + " + number2 + " = " + addition);
+
+        // 4.  Calculator:  Write a function that takes three arguments num1, num2 & operator & compute the desired operation. Return and show the desired result in your browser.
+
+        function calculator(num1, num2, op) {
+            if (op === "+") {
+                return num1 + num2
+            }
+            else if (op === "-") {
+                return num1 - num2
+            }
+            else if (op === "*") {
+                return num1 * num2
+            }
+            else if (op === "/") {
+                return (num1 / num2).toFixed(2)
+            }
+        }
+        var Number1 = +prompt("Enter Number 1")
+        var Number2 = +prompt("Enter Number 2")
+        var Operator = prompt("Enter Operator")
+        var calc = calculator(Number1, Number2, Operator)
+        console.log(Number1 + " " + Operator + " " + Number2 + " = " + calc);
+
+        // 5.  Write a function that squares its argument.
+
+        function square(value) {
+            return Math.pow(value, 2)
+        }
+        var numsq = +prompt("Enter a number to print its square:")
+        console.log("Number: " + numsq + "\nSquare: " + square(numsq))
+
+        // 7.  Write a function that computes factorial of a number. 
+
+        function factorial(num) {
+            if (num === 0 || num === 1)
+                return 1;
+            for (var i = num - 1; i >= 1; i--) {
+                num *= i
+            }
+            return num;
+        }
+        numb = +prompt("Enter a number to print its factorial")
+        console.log("Number: " + numb + "\nFactorial: " + factorial(numb));
+
+        // 8. Write a function that take start and end number as inputs & display counting in your browser. 
+
+        function counting(s_no, e_no) {
+            number = "\nCounting:\n"
+            for (var i = s_no; i <= e_no; i++) {
+                number += i + "\n"
+            }
+            return number
+        }
+        var start_no = +prompt("Enter Start Counting Number:")
+        var end_no = +prompt("Enter End Counting Number:")
+        console.log("Starting Number: " + start_no + "\nEnding Number: " + end_no + counting(start_no, end_no));
+
+        // 8. Write a nested function that computes hypotenuse of a right angle triangle.  Hypotenuse2 = Base2 + Perpendicular2 Take base and perpendicular as inputs. Outer function : calculateHypotenuse() Inner function: calculateSquare()
+
+        function calculateHypotenuse(base, perpendicular) {
+            var hypotenuse = Math.pow(base, 2) + Math.pow(perpendicular, 2);
+            function calculateSquare(hypotenuse) {
+                return Math.pow(hypotenuse, 2)
+            }
+            return calculateSquare(hypotenuse)
+        }
+        var base = +prompt("Enter base value")
+        var perpendicular = +prompt("Enter Perpendicular value")
+        console.log("Base: " + base + "\nPerpendicular: " + perpendicular + "\nHypotenuse: " + calculateHypotenuse(base, perpendicular));
+
+        // 9. Write a function that calculates the area of a rectangle. 
+        //          A = width * height 
+        //    Pass width and height in following manner: 
+        //      a. Arguments as values 
+        //      b. Arguments as variables
+
+        function rectangleArea(w, h) {
+            var area = w * h
+            return area
+        }
+        var width = +prompt("Enter Width of rectangle")
+        var height = +prompt("Enter Height of rectangle")
+        console.log("Arguments as variables" + "\nWidth: " + width + "\nHeight: " + height + "\nArea of Rectangle: " + rectangleArea(width, height));
+        console.log("Arguments as values" + "\nWidth: " + 2 + "\nHeight: " + 4 + "\nArea of Rectangle: " + rectangleArea(2, 4));
+
+        // 10. Write a function that receives an array & returns the sorted array. 
+
+        function sort(arr) {
+            return arr.sort()
+        }
+        var array = ["Banana", "Orange", "Grapes", "Apple", "Strawberry", "Cherry"]
+        console.log("Original Array: " + array + "\nSorted Array: " + sort(array));
+
+        // 11. Write a function that takes numbers array, sums its elements & returns the sum.
+
+        function arraySum(arr) {
+            num = 0
+            for (var i = 0; i < arr.length; i++) {
+                num += arr[i]
+            }
+            return num
+        }
+        var array_length = +prompt("Enter length of array")
+        var arrayElement = []
+        for (var i = 0; i < array_length; i++) {
+            arrayElement.push(+prompt("Enter Array Element"))
+        }
+        console.log("Array: " + arrayElement + "\nArray Sum: " + arraySum(arrayElement));
+
+        // 12. Write a function that computes power of a number. E.g. 2^3 is 8.
+
+        function power() {
+            var number = +prompt("Enter any Number to determine its power")
+            var po = +prompt("Enter any exponent value")
+            console.log("Number: " + number + "\nPower: " + po + "\nResult: " + Math.pow(number, po));
+        }
+        power()
+
+        // 13. Write a function that simulates a dice & returns a random dice value.
+
+        function diceNumber() {
+            var random = Math.random()
+            ramdom = (random * 6) + 1
+            ramdom = Math.floor(ramdom)
+            return ramdom
+        }
+        console.log("Random dice number: " + diceNumber());
+
+        // 14. Write a JavaScript function that reverse a number.  
+        //      Example x = 32243; EXPECTED OUTPUT : 34223
+
+        function reverse_a_number() {
+            var num = +prompt("Enter any number to get reverse")
+            var n = num + "";
+            console.log("Number: " + num + "\nReversed Order: " + parseInt(n.split("").reverse().join("")));
+        }
+        reverse_a_number()
+
+        // 15. Write a JavaScript function that checks whether a passed string is palindrome or not?   
+        // A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam. 
+
+        function palindrome() {
+            var sequence = prompt("Enter any string to check for palindrome")
+            var reverseSequence = sequence.split("").reverse().join("");
+            var string = "Original string: " + sequence + "\n";
+            string += "Reversed String: " + reverseSequence + "\n";
+            if (sequence === reverseSequence) {
+                string += "Passed string is a Palindrome";
+            }
+            else {
+                string += "Passed string is not a Palindrome";
+            }
+            console.log(string);
+        }
+        palindrome();
+
+        // 16. Write a JavaScript function that accepts a string as a parameter and converts the first letter of each word of the string in upper case.  EXAMPLE STRING : 'the quick brown fox'  EXPECTED OUTPUT : 'The Quick Brown Fox' 
+
+        function capitalize(text) {
+            splitText = text.toLowerCase().split(' ');
+
+            for (var i = 0; i < splitText.length; i++) {
+                splitText[i] = splitText[i].charAt(0).toUpperCase() + splitText[i].substring(1);
+            }
+            return splitText.join(' ');
+        }
+        console.log("String: the quick brown fox\n" + "Capitalise String: " + capitalize("the quick brown fox"));
+
+        // 17. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.  EXAMPLE STRING : 'Web Development Tutorial'  EXPECTED OUTPUT : 'Development' 
+
+        function longest_Word(string) {
+            var longest = 0;
+            word = ""
+            string = string.split(" ")
+
+            for (var i = 0; i < string.length; i++) {
+                if (string[i].length > longest) {
+                    longest = string[i].length
+                    word = string[i]
+                }
+            }
+            return word
+        }
+        var string = "Web Development Tutorial"
+        console.log("String: " + string + "\nLongest Word in a String: " + longest_Word(string));
+
+        // 18. Write a JavaScript function that accepts a string as a parameter and counts the number of vowels within the string.  
+        //     EXAMPLE STRING : 'The quick brown fox'  
+        //     EXPECTED OUTPUT : 5
+
+        function vowel_Count(string) {
+            var string = string.split("")
+            vowel = 0
+            for (var i = 0; i < string.length; i++) {
+                if (string[i] === "a" || string[i] === "e" || string[i] === "i" || string[i] === "o" || string[i] === "u" || string[i] === "A" || string[i] === "E" || string[i] === "I" || string[i] === "O" || string[i] === "U") {
+                    vowel += 1
+                }
+            }
+            return vowel
+        }
+        str = "The quick brown fox"
+        console.log("String: " + str + "\nNumber of Vowels within a String: " + vowel_Count(str))
+
+        // 19. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.  
+        // Sample arguments : 'JSResourceS.com', 'o' EXPECTED OUTPUT : 2
+
+        function letter_occurence(string, letter) {
+            string = string.split("")
+            count = 0
+            for (var i = 0; i < string.length; i++) {
+                if (string[i] === letter) {
+                    count++
+                }
+            }
+            return count
+        }
+        s = "JSResourceS.com"
+        console.log("String: " + s + "\nLetter occurence to be count: " + "o" + "\nLetter Count: " + letter_occurence(s, "o"));
+
+        // 20. The Age Calculator 
+        //     Forgot how old you are? Calculate it! 
+        //     1. Write a function named calculateAge that: 
+        //         a. takes 2 arguments: birth year, current year. 
+        //         b. calculates the 2 possible ages based on those years. 
+        //         c. outputs the result to the screen like so: "You are either NN or NN" 
+
+        function calculateAge(c_Year, b_Year) {
+            var age = c_Year - b_Year;
+            return "You are either " + (age - 1) + " or " + (age) + " years old."
+        }
+        var currentYear = new Date().getFullYear();
+        var birthYear = +prompt("Enter your birth year")
+        console.log("Current Year: " + currentYear + "\nBirth Year: " + birthYear + "\nAge: " + calculateAge(currentYear, birthYear));
+
+        // 21. The Geometrizer 
+        //     Create 2 functions that calculate properties of a circle, using the definitions here. 
+        //     Create a function called calcCircumference: 
+        //          a. Pass the radius to the function. 
+        //          b. Calculate the circumference based on the radius, and output "The circumference is NN". 
+        //     Create a function called calcArea: 
+        //          a. Pass the radius to the function. 
+        //          b. Calculate the area based on the radius, and output "The area is NN".
+
+        function calcCircumference(r) {
+            var circumference = 2 * Math.PI * r
+            return circumference.toFixed(2)
+        }
+        function calcArea(r) {
+            var area = Math.PI * Math.pow(r, 2)
+            return area.toFixed(2)
+        }
+        var radius = +prompt("Enter value of radius")
+        console.log("Radius: " + radius + "\nCircumference of Circle: " + calcCircumference(radius));
+        console.log("Radius: " + radius + "\nArea of Circle: " + calcArea(radius));
+
+        // 22. The Temperature Converter 
+        //     It's hot out! Let's make a converter based on the steps here. 
+        //     Create a function called celsiusToFahrenheit: 
+        //         a. Store a celsius temperature into a variable. 
+        //         b. Convert it to fahrenheit and output "NN°C is NN°F". 
+        //     Create a function called fahrenheitToCelsius: 
+        //         a. Now store a fahrenheit temperature into a variable. 
+        //         b. Convert it to celsius and output "NN°F is NN°C." 
+
+        function celsiusToFahrenheit() {
+            var celcius = +prompt("Enter Temperature in Celcius")
+            var farenheit = (celcius * (9 / 5)) + 32;
+            console.log("Temperature in Celsius: " + celcius + "\n" + celcius + "°C is " + farenheit.toFixed(2) + "°F");
+        }
+        function farenheitToCelcius() {
+            var farenheit = +prompt("Enter Temperature in Farenheit")
+            var celcius = (farenheit - 32) * (5 / 9)
+            console.log("Temperature in Farenheit: " + farenheit + "\n" + farenheit + "°F is " + celcius.toFixed(2) + "°C");
+        }
+        celsiusToFahrenheit()
+        farenheitToCelcius()
+
+    </script>
+</body>
+
+</html>
