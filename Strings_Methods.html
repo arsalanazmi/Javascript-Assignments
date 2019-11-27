@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Strings Methods</title>
+</head>
+
+<body>
+    <script>
+        // 1.  Write a program that takes two user inputs for first and last name using prompt and merge them in a new variable titled fullName. Greet the user using his full name.
+
+        var first_Name = prompt("Enter your First Name")
+        var last_Name = prompt("Enter your Last Name")
+        var full_Name = "Hi " + first_Name.concat(" ", last_Name)
+        console.log(full_Name);
+
+        // 2.  Write a program to take a user input about his favorite mobile phone model. Find and display the length of user input in your browser.
+
+        var phone_model = prompt("Enter your favourite Mobile Phone Model")
+
+        var phone = "My favourite phone is : " + phone_model + "\n"
+        phone += "Length of string : " + phone_model.length
+
+        console.log(phone);
+
+        // 3. Write a program to find the index of letter “n” in the word “Pakistani” and display the result in your browser.
+
+        var string = "Pakistani"
+        var str = "String: \n" + string + "\n\n"
+        str += "Index of 'n': \n" + string.indexOf("n")
+        console.log(str);
+
+        // 4. Write a program to find the last index of letter “l” in the word “Hello World” and display the result in your browser. 
+
+        var String = "Hello World"
+        Str = "String: \n" + String + "\n\n"
+        Str += "Last Index Of 'l': " + String.lastIndexOf("l")
+        console.log(Str);
+
+        // 5. Write a program to find the character at 3rd index in the word “Pakistani” and display the result in your browser.
+
+        var word = "Pakistani"
+        var Word = "String: " + word + "\n"
+        Word += "Character at index 3: " + word.charAt("3")
+        console.log(Word);
+
+        // 7. Write a program to replace the “Hyder” to “Islam” in the word “Hyderabad” and display the result in your browser.
+
+        var string_Replace = "Hyderabad"
+        var stringReplace = "City: " + string_Replace + "\n"
+        stringReplace += "String Replacement: " + string_Replace.replace("Hyder", "Islam")
+        console.log(stringReplace);
+
+        // 8. Write a program to replace all occurrences of “and” in the string with “&” and display the result in your browser. var message = “Ali and Sami are best friends. They play crlicket and footbal together.”; 
+
+        var message = "Ali and Sami are best friends. They play crlicket and footbal together."
+        var msg = "Message: " + message + "\n"
+        msg += "After replacement: " + message.replace(/and/g, "&")
+        console.log(msg);
+
+        // 9. Write a program that converts a string “472” to a number 472. Display the values & types in your browser.
+
+        var value = "472"
+        var val = parseInt(value)
+
+        var Value = "Value: " + value + "\nType: " + typeof (value) + "\n"
+        Value += "Value: " + val + "\nType: " + typeof (val)
+
+        console.log(Value);
+
+        // 10. Write a program that takes user input. Convert and show the input in capital letters.
+
+        var upper = prompt("Enter any word")
+        var Upper = "User Input : " + upper + "\n"
+        Upper += "Upper case : " + upper.toUpperCase()
+        console.log(Upper);
+
+        // 11. Write a program that takes user input. Convert and show the input in small letters
+
+        var lower = prompt("Enter any word")
+        var Lower = "User Input : " + lower + "\n"
+        Lower += "Lower case : " + lower.toLowerCase()
+        console.log(Lower);
+
+        // 12. Write a program that takes user input. Convert and show the input in title case.
+
+        var title = prompt("Enter any word")
+        var Title = "User Input : " + title + "\n"
+        Title += "Title case : " + title.charAt(0).toUpperCase() + title.slice(1).toLowerCase()
+        console.log(Title);
+
+        // 13. Write a program that converts the variable num to string.
+        //         var num = 35.36 ;
+        //     Remove the dot to display “3536” display in your browser.
+
+        var num = 35.36;
+        var Num = "Number: " + num + "\n"
+        Num += "String: " + num.toString().replace(".", "")
+        console.log(Num);
+
+        // 14. Write a program to display the value of x in your browser if a=”3” and b=”3”? 
+
+        var a = "3"
+        var b = "3"
+
+        var x = "a is " + a + "\n"
+        x += "b is " + b + "\n"
+        x += "a+b is " + a + b
+
+        console.log(x);
+
+        // 15. Write a program to display the value of y in your browser if a=”3” and b=”3”?          
+        //      y = a - b; 
+
+        var a = "3"
+        var b = "3"
+
+        var y = "a is " + a + "\n"
+        y += "b is " + b + "\n"
+        y += "a-b is " + (a - b)
+
+        console.log(y);
+
+        // 16. You have an array           
+        //         A = [cake”, “apple pie”, “cookie”, “chips”, “patties”] 
+        //     Write a program to enable “search by user input” in an array. After searching, prompt the user whether the given item is found in the list or not.  Note: Perform case insensitive search. Whether the user enters cookie, Cookie, COOKIE or coOkIE, program should inform about its availability.
+
+        var bakeryItems = ["cake", "apple pie", "cookie", "chips", "patties"]
+        var itemsInput = prompt("welcome to ABC Bakery.what do you want to order Sir/Ma'am?")
+        var matchFound = "No"
+        for (var i = 0; i < bakeryItems.length; i++) {
+            if (bakeryItems[i] === itemsInput.toLowerCase()) {
+                matchFound = "Yes"
+                console.log(bakeryItems[i] + " is available at index : " + bakeryItems.indexOf(bakeryItems[i]));
+                break
+            }
+        }
+        if (matchFound == "No") {
+            console.log("We are sorry. " + itemsInput + " is not available in our balery.");
+        }
+
+        // 17. Write a program to take two input strings. Using string comparison, tell which string is greater than other or if they both are equal.
+
+        var string1 = "cab"
+        var string2 = "car"
+
+        if (string1 > string2) {
+            console.log(string1 + " is greater than " + string2);
+        }
+        if (string2 > string1) {
+            console.log(string2 + " is greater than " + string1);
+        }
+        else if (string2 === string1) {
+            console.log(string1 + " is equal to " + string1);
+        }
+
+        // 18. Write a program to take password as an input from user. The password must qualify these requirements: 
+        //     a. It should contain alphabets and numbers 
+        //     b. It should not start with a number 
+        //     c. It must at least 6 characters long If the password does not meet above requirements, prompt the user to enter a valid password. For character codes of a-z, A-Z & 0-9, refer to ASCII table at the end of this document. 
+
+        var password = prompt("Enter your password")
+        var regex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,})");
+
+        if ((regex.test(password)) && (isNaN(password.slice(0, 1)))) {
+            console.log("Correct Password!");
+        }
+        else {
+            console.log("Invalid password!");
+        }
+
+        // 19. Write a program to convert the following string to an array using string split method.         
+        //         var university = “University of Karachi”; 
+        //     Display the elements of array in your browser. 
+
+        var university = "University of Karachi"
+        var uni = university.split("")
+
+        University = ""
+        for (var i = 0; i < uni.length; i++) {
+            University += uni[i] + "\n"
+        }
+        console.log(University)
+
+        // 20. Write a program to display the last character of a user input.
+
+        var userinput = prompt("Enter any Word")
+        lastChar = "String: " + userinput + "\n"
+        lastChar += "Last Character of input: " + userinput.substr(-1)
+        console.log(lastChar)
+
+        // 21.  You have a string “The quick brown fox jumps over the lazy dog”. Write a program to count number of occurrences of word “the” in given string.
+
+        var text = "the quick brown fox jumps over the lazy dog"
+        var Text = "Text: " + text + "\n"
+        Text += "There are " + text.match(/the/g).length + " occurence(s) of word 'the'."
+        console.log(Text);
+
+        // 22. Write a program to count number of vowels & consonants in given string           
+        //         var str = “Pakistan”
+
+        var Str = "Pakistan"
+        var consonant = 0
+        var vowels = 0
+        for (var i = 0; i < Str.length; i++) {
+            if (Str[i] === "a" || Str[i] === "e" || Str[i] === "i" || Str[i] === "o" || Str[i] === "u") {
+                vowels += 1;
+            }
+            else {
+                consonant += 1;
+            }
+        }
+        var count = "String: " + Str + "\n"
+        count += "Vowels Count : " + vowels + "\n"
+        count += "Consonant count : " + consonant
+        console.log(count);
+
+    </script>
+</body>
+
+</html>
