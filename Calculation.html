@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        function calculator(num1,num2,operator) {
+        
+            switch (operator) {
+                case "+":
+                    number = num1 + num2
+                    break
+                case "-":
+                    number = num1 - num2
+                    break
+                case "*":
+                    number = num1 * num2
+                    break
+                case "/":
+                    if (num2 == 0) {
+                        throw new Error("Sorry number can not be divided by zero")
+                    }
+                    else{
+                    number = (num1 / num2).toFixed(2)
+                    break
+                    }
+            }
+            return number
+        }
+        try {
+            var num1 = +prompt("Enter Number 1")
+            var num2 = +prompt("Enter Number 2")
+            var operator = prompt("Enter any Operator (+ , - , * , /) ")
+            console.log(num1 + " " + operator + " " + num2 + " = " + calculator(num1,num2,operator));
+            console.log("All Operations performed successfully");    
+        }
+        catch(e) {
+            console.log(e.message);
+        }
+        finally{
+            console.log("Operation Finished"); 
+        }
+    
+    </script>
+</body>
+</html>
